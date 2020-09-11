@@ -1,26 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Register from './components/Register';
+import Speaker from './components/speaker';
+import { Route,Switch, Redirect } from "react-router-dom";
+class App extends Component {
+  constructor(props){
+    super(props);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  }
+  render(){
+    return (
+      <BrowserRouter>
+      <div>
+      <Header />
+
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/aboutus" component={About} />
+          <Route path="/register" component={Register} />
+          <Route path="/speaker" component={Speaker} />
+          <Redirect to="/home" />
+        </Switch>
+      <Footer />
+        
+      </div>
+      </BrowserRouter>
+    );
+  }
+
 }
 
 export default App;

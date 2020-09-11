@@ -1,0 +1,84 @@
+#imagec{
+    background-size: cover;
+    display: block;
+    margin: auto;
+
+}
+#navbar{
+    background-color: black;
+    //margin-bottom: 20px;
+    //height: 80px navrbar error;
+}
+.footer{
+    color: whitesmoke;
+    margin-top: 10px;
+    background-color: rgb(37, 34, 34);
+}
+#carosel{
+    margin-top: 10px;
+}
+#card{
+    border: none;
+}
+#card :hover{
+    box-shadow: 0px 0px 6px;
+}
+#f{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 2em 5em;
+}
+#f img{
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+#f img:hover{
+    transform: translateY(-2px);
+    box-shadow:5px 10px 8px #888;
+}
+#g{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "image description description"
+                         "image description description"
+                         "image description description";
+}
+#g p{
+    align-self: center;
+    grid-area: description;
+}
+#g img{
+    grid-area: image;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+    #g{
+        grid-template-areas: ". image ."
+                              "description description description"
+                              "description description description";
+    }
+    #g img{
+        align-self: center;
+    }
+  }
+
+/*<Media className="m-5">
+                    <Media left href="#">
+                        <img src={logo} alt="Nikhil" />
+                    </Media>
+                    <Media body className="ml-5">
+                        <Media heading>
+                        Nikhil Sharma
+                        </Media>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </Media>
+                </Media>*/
+
