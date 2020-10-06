@@ -43,33 +43,37 @@
 #g{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "image description description"
-                         "image description description"
+    grid-template-rows: 1fr  1fr;
+    grid-template-areas: "image description description"                        
                          "image description description";
 }
 #g p{
     align-self: center;
     grid-area: description;
+    margin: 2em;
 }
 #g img{
     grid-area: image;
+    margin: 1em 3em;
 }
 
 @media only screen and (max-width: 800px) {
-    body {
-      background-color: lightblue;
-    }
+   
     #g{
-        grid-template-areas: ". image ."
-                              "description description description"
+        grid-template-areas: ". image ."                            
                               "description description description";
     }
     #g img{
         align-self: center;
+        margin-top: 5em;
     }
   }
 
+  .footer{
+    background-color: #000;
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+  }
 /*<Media className="m-5">
                     <Media left href="#">
                         <img src={logo} alt="Nikhil" />
@@ -80,5 +84,9 @@
                         </Media>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                     </Media>
-                </Media>*/
+                </Media>
+neha.23413@lpu.co.in
+ajay.21908@lpu.co.in
+*/
+
 
