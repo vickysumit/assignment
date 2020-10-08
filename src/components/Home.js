@@ -4,6 +4,8 @@ import "../css/styles.css";
 import pizza from './pizza.jpg';
 import micro from './m1.jpg';
 import { IMAGES } from "../shared/images";
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 import {   Carousel,
     CarouselItem,
@@ -13,6 +15,12 @@ import {   Carousel,
     CarouselIndicators,
     CarouselCaption,CardImgOverlay } from "reactstrap";
 
+    const mapStateToProps = state => {
+      return {
+        dishes: state.dishes,
+        images: state.images
+      }
+    }
     const Example = (props) => {
         const [activeIndex, setActiveIndex] = useState(0);
         const [animating, setAnimating] = useState(false);
@@ -41,7 +49,7 @@ import {   Carousel,
               onExited={() => setAnimating(false)}
               key={item.src}
             >
-              <img src={item.src} alt={item.altText} width="300" height="300" id="imagec" className=""/>
+              <img src={item.src} alt={item.altText}  id="imagec" className=""/>
               <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
           );
@@ -66,16 +74,16 @@ class Home extends Component{
     constructor(props){
       super(props);
       this.state ={
-        images:IMAGES
+        //images:IMAGES
       }
     }
 
     render(){
-      const imagerender = this.state.images.map((img) => {
+      const imagerender = this.props.images.map((img) => {
         return(
           <div key={img.id} className="col-12 col-md-2 ml-1 mb-5 " >
              <Card id="card">
-               <CardImg src ={img.image} alt={img.name} width="350" height="250" className="img-fluid p-2" ></CardImg>
+               <CardImg src ={img.image} alt={img.name}  className="img-fluid p-2" ></CardImg>
                     <CardTitle>
                        
                           {img.name}
@@ -106,4 +114,4 @@ class Home extends Component{
     }
 
 
-export default Home;
+    export default withRouter(connect(mapStateToProps)(Home));

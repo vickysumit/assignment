@@ -12,12 +12,13 @@ export const items = [
         caption: ''
     },
     {
-        src: '/assets/images/sp5.png',
+        src: '/assets/images/sp4.jpg',
         altText: '',
         caption: ''
     }
   ];
 
+  
   
 
 

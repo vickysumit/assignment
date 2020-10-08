@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Register from './components/Register';
 import Speaker from './components/speaker';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './redux/configureStore';
 import { Route,Switch, Redirect } from "react-router-dom";
 class App extends Component {
   constructor(props){
@@ -14,8 +16,10 @@ class App extends Component {
 
   }
   render(){
+    const store = ConfigureStore();
     return (
-      <BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
       <div>
       <Header />
 
@@ -30,6 +34,8 @@ class App extends Component {
         
       </div>
       </BrowserRouter>
+      </Provider>
+      
     );
   }
 
